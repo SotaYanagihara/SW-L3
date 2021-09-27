@@ -1,0 +1,17 @@
+<% if flash[:notice] %>
+    <span style="color:green;">
+        <%= flash[:notice] %>
+    </span>
+<% end %>
+<h1>Tweets#index</h1>
+<% @tweet.each do |f| %>
+    <p>
+        <%= f.message %>
+        <%= ((Time.current - f.tdate) / 60).to_i.to_s + "分前" %>
+        <%= link_to '表示', "/tweets/#{f.id}" %>
+        <%= link_to '削除', "/tweets/#{f.id}", method: :delete %> 
+        <%= link_to '編集', "/tweets/#{f.id}/edit" %> 
+    </p>
+<% end %>
+
+<%= link_to '新規投稿', '/tweets/new' %>
