@@ -3,7 +3,6 @@
         <%= flash[:notice] %>
     </span>
 <% end %>
-<h1>Tweets#index</h1>
 <% @tweet.each do |f| %>
     <p>
         <%= f.message %>
@@ -14,4 +13,3 @@
     </p>
 <% end %>
 
-<%= link_to '新規投稿', '/tweets/new' %>
